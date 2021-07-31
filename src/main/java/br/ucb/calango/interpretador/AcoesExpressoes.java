@@ -235,6 +235,10 @@ public class AcoesExpressoes {
             tamanhoCampo = ((Integer)formatadorTotal.getValor(Integer.class)).toString();
          }
 
+         // Aceita o zero sem lançar exceção
+         if ( tamanhoCampo.equals("0"))
+            tamanhoCampo = "";
+
          String formato = "%" + tamanhoCampo;
          Object valor;
          if (Integer.class.equals(expressao.getTipo())) {
